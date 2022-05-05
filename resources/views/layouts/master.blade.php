@@ -13,19 +13,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('layouts.partials._sidebar')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    @include('flash::message')
     @yield('content')
   </div>
-  <!-- /.content-wrapper -->
   @include('layouts.partials._footer')
-  <!-- Control Sidebar -->
-  <!-- <aside class="control-sidebar control-sidebar-dark"> -->
-    <!-- Control sidebar content goes here -->
-    <!-- <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside> -->
-  <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 @include('layouts.partials._footer-script')
+</body>
+</html>
