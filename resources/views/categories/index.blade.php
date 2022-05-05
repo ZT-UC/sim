@@ -29,10 +29,9 @@
                     <h5 class="card-title">Category List</h5>
                 </div>
                 <div class="card-body">
-                <a href="{{ route('categories.create') }}" class="btn btn-sm btn-primary">
-                <i class="fa fa-plus"></i> Add Category
-                </a>
-
+                    <a href="{{ route('categories.create') }}" class="btn btn-sm btn-primary mb-2">
+                      <i class="fa fa-plus"></i> Add Category
+                    </a>
                   <table id="example1" class="table table-bordered">
                       <thead>
                           <tr>

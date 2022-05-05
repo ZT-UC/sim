@@ -29,7 +29,7 @@
                     <h5 class="card-title">Brand List</h5>
                 </div>
                 <div class="card-body">
-                <a href="{{ route('brands.create') }}" class="btn btn-sm btn-primary">
+                <a href="{{ route('brands.create') }}" class="btn btn-sm btn-primary mb-2">
                 <i class="fa fa-plus"></i> Add Brand
                 </a>
 

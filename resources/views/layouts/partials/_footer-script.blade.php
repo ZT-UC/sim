@@ -1,5 +1,5 @@
 <!-- REQUIRED SCRIPTS -->
-
+<script src="{{ asset ('js/app.js') }}"></script>
 <!-- jQuery -->
 <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
@@ -26,7 +26,7 @@
 $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
 
 $("#example1").DataTable({
-  "responsive": true, "lengthChange": true, "autoWidth": false,
+  "responsive": true, "lengthChange": false, "autoWidth": false,
   "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
 }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
