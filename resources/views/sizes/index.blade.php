@@ -48,13 +48,12 @@
                                       <td> {{ ++$key }}</td>
                                       <td>{{$size->size ?? ''}}</td>
                                       <th>
-                                      <a href="{{ route('sizes.edit', $size->id) }}" class="btn btn-sm btn-info">
+                                      <a href="{{ route('sizes.edit', $size->id) }}" class="btn btn-sm btn-info mr-2">
                                         <i class="fa fa-edit"></i> Edit
                                       </a>
                                       <a href="javascript:;" class="btn btn-sm btn-danger sa-delete" data-form-id="size-delete-{{ $size->id }}">
                                         <i class="fa fa-trash"></i> Delete
                                       </a>
-
                                       <form id="size-delete-{{ $size->id }}"action="{{ route('sizes.destroy', $size->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
