@@ -1,15 +1,12 @@
-import { createStore } from "vuex";
+import { createStore, createLogger } from "vuex";
+
+// Modules
+import categories from "./modules/categories";
 
 // Create a new store instance.
 export const store = createStore({
-    state() {
-        return {
-            count: 0,
-        };
+    modules: {
+        categories,
     },
-    mutations: {
-        increment(state) {
-            state.count++;
-        },
-    },
+    plugins: [createLogger()],
 });

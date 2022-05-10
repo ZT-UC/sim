@@ -7,9 +7,8 @@
         <form role="form" action="" method="post">
             <div class="card-body">
               <div class="form-group">
-                <label>Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Enter category name">
-
+                <label>Category</label>
+                <Select2 v-model="form.category_id" :options="categories" :settings="{ placeholder: 'Select category'}"></Select2>
               </div>
             </div>
             <!-- /.card-body -->
@@ -24,5 +23,28 @@
 </template>
 
 <script>
-export default {}
+  import { store } from "../../store"
+  import * as actions from "../../store/action-types"
+  import { mapGetters } from "vuex"
+  import Select2 from 'vue3-select2-component';
+
+  export default {
+    components: { Select2 },
+    data() {
+      return {
+        form: {
+          category_id: ''
+        },
+      }
+    },
+    computed: {
+      ...mapGetters({
+        'categories' : 'getCategories'
+      })
+    },
+    mounted() {
+      // Get categories
+      store.dispatch(actions.GET_CATEGORIES)
+    }
+  }
 </script>
