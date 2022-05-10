@@ -45,7 +45,7 @@ class CategoriesController extends Controller
         $category->name = $request->name;
         $category->save();
 
-        flash('Category created succefully')->success();
+        flash('Category created successfully')->success();
         return back();
     }
 
@@ -91,7 +91,7 @@ class CategoriesController extends Controller
         $category->name = $request->name;
         $category->save();
 
-        flash('Category updated succefully')->success();
+        flash('Category updated successfully')->success();
         return redirect()->route('categories.index');
     }
 
@@ -106,7 +106,7 @@ class CategoriesController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
 
-        flash('Category deleted succefully')->success();
+        flash('Category deleted successfully')->success();
         return redirect()->route('categories.index');
     }
 

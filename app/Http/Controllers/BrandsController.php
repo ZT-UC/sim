@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BrandsController extends Controller
 {
@@ -45,7 +46,7 @@ class BrandsController extends Controller
         $brand->name = $request->name;
         $brand->save();
         
-        flash('Brand created succefully')->success();
+        flash('Brand created successfully')->success();
         return back();
     }
 
@@ -91,7 +92,7 @@ class BrandsController extends Controller
         $brand->name = $request->name;
         $brand->save();
 
-        flash('Brand updated succefully')->success();
+        flash('Brand updated successfully')->success();
         return redirect()->route('brands.index');
     }
 
@@ -106,7 +107,18 @@ class BrandsController extends Controller
         $brand = Brand::findOrFail($id);
         $brand->delete();
 
-        flash('Brand deleted succefully')->success();
+        flash('Brand deleted successfully')->success();
         return redirect()->route('brands.index');
+    }
+
+    // HANDLE AJAX REQUEST
+    public function getBrandsJson() {
+        $brands = Brand::all();
+
+        return response()->json([
+            'success' => true,
+            'data' => $brands
+
+        ], Response::HTTP_OK);
     }
 }

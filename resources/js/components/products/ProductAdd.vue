@@ -10,6 +10,10 @@
                 <label>Category</label>
                 <Select2 v-model="form.category_id" :options="categories" :settings="{ placeholder: 'Select category'}"></Select2>
               </div>
+              <div class="form-group">
+                <label>Brand</label>
+                <Select2 v-model="form.brand_id" :options="brands" :settings="{ placeholder: 'Select brand'}"></Select2>
+              </div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
@@ -33,18 +37,22 @@
     data() {
       return {
         form: {
-          category_id: ''
+          category_id: '',
+          brand_id: ''
         },
       }
     },
     computed: {
       ...mapGetters({
-        'categories' : 'getCategories'
+        'categories' : 'getCategories',
+        'brands' : 'getBrands'
       })
     },
     mounted() {
       // Get categories
       store.dispatch(actions.GET_CATEGORIES)
+      // Get brands
+      store.dispatch(actions.GET_BRANDS)
     }
   }
 </script>

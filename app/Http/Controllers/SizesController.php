@@ -45,7 +45,7 @@ class SizesController extends Controller
         $size->size = $request->size;
         $size->save();
 
-        flash('Size created succefully')->success();
+        flash('Size created successfully')->success();
         return back();
     }
 
@@ -91,7 +91,7 @@ class SizesController extends Controller
         $size->size = $request->size;
         $size->save();
 
-        flash('Size updated succefully')->success();
+        flash('Size updated successfully')->success();
         return redirect()->route('sizes.index');
     }
 
@@ -106,7 +106,7 @@ class SizesController extends Controller
         $size = Size::findOrFail($id);
         $size->delete();
 
-        flash('Size deleted succefully')->success();
+        flash('Size deleted successfully')->success();
         return redirect()->route('sizes.index');
     }
 }
