@@ -22,6 +22,8 @@
         "vue-loader": "^16.8.3"
     },
     "dependencies": {
+        "autoprefixer": "10.4.5",
+        "bootstrap": "^5.2.0-beta1",
         "vue": "^3.2.33",
         "vue3-select2-component": "^0.1.7",
         "vuex": "^4.0.2"

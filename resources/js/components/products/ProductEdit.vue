@@ -5,7 +5,7 @@
       <div class="col-sm-6">
         <div class="card card-primary card-outline">
           <div class="card-body">
-            <h5 class="card-title">Create Product</h5><br>
+            <h5 class="card-title">Update Product</h5><br>
             <div class="card-body">
                 <div class="form-group">
                   <label>Category <span class="text-danger">*</span></label>
@@ -25,10 +25,11 @@
                 </div>
                 <div class="form-group">
                   <label>Image <span class="text-danger">*</span></label>
+                  <img class="old_image" :src="product.product_image"> 
                   <input @change="selectImage" type="file" class="form-control" placeholder="Product image">
                 </div>
                 <div class="form-group">
-                  <label>Cost price ($) <span class="text-danger">*</span></label>
+                  <label>Cost price ($)<span class="text-danger">*</span></label>
                   <input type="text" v-model="form.cost_price" class="form-control" placeholder="Product cost price">
                 </div>
                 <div class="form-group">
@@ -101,6 +102,7 @@
       Select2,
       ShowError
     },
+    props: ['product'],
     data() {
       return {
         form: {
@@ -138,6 +140,19 @@
       store.dispatch(actions.GET_BRANDS)
       // Get sizes
       store.dispatch(actions.GET_SIZES)
+
+      // Set old data
+      this.form.category_id = this.product.category_id
+      this.form.brand_id = this.product.brand_id
+      this.form.name = this.product.name
+      this.form.sku = this.product.sku
+      this.form.cost_price = this.product.cost_price
+      this.form.retail_price = this.product.retail_price
+      this.form.year = this.product.year
+      this.form.description = this.product.description
+      this.form.status = this.product.status
+      
+      this.form.items = this.product.product_stocks
     },
     methods: {
       selectImage(e){
@@ -156,6 +171,7 @@
       },
       submitForm() {
         let data = new FormData();
+        data.append('_method', 'PUT')
         data.append('category_id', this.form.category_id)
         data.append('brand_id', this.form.brand_id)
         data.append('sku', this.form.sku)
@@ -167,9 +183,20 @@
         data.append('description', this.form.description)
         data.append('status', this.form.status)
         data.append('items', JSON.stringify(this.form.items))
+
+        let payload = {
+            data: data,
+            id: this.product.id
+        }
         
-        store.dispatch(actions.ADD_PRODUCT, data)
+        store.dispatch(actions.EDIT_PRODUCT, payload)
       }
     }
   }
 </script>
+
+<style scoped>
+.old_image {
+    width: 100px;
+}
+</style>
