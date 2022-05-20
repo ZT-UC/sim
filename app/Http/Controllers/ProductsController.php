@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductSizeStock;
+
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -226,4 +228,14 @@ class ProductsController extends Controller
         flash('Product deleted succefully')->success();
         return back();
     }
+
+        // HANDLE AJAX REQUEST
+        public function getProductsJson() {
+            $products = Product::with(['product_stocks.size'])->get();
+    
+            return response()->json([
+                'success' => true,
+                'data' => $products
+            ], Response::HTTP_OK);
+        }
 }
