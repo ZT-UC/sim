@@ -33,7 +33,7 @@
                     @csrf
                     <div class="card-body">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
+                        <label for="exampleInputEmail1">Name <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control" placeholder="Enter category name">
                         @if($errors->has('name'))
                             <span class="text-danger">{{ $errors->first('name')}}</span>

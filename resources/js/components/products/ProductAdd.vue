@@ -36,15 +36,15 @@
                   <input type="text" v-model="form.retail_price" class="form-control" placeholder="Product retail price">
                 </div>
                 <div class="form-group">
-                  <label>Year<span class="text-danger">*</span></label>
+                  <label>Year <span class="text-danger">*</span></label>
                   <input type="text" v-model="form.year" class="form-control" placeholder="Product year (example: 2022)">
                 </div>
                 <div class="form-group">
-                  <label>Description<span class="text-danger">*</span></label>
+                  <label>Description <span class="text-danger">*</span></label>
                   <input type="text" v-model="form.description" class="form-control" placeholder="Product description [max: 200]">
                 </div>
                 <div class="form-group">
-                  <label>Status<span class="text-danger">*</span></label>
+                  <label>Status <span class="text-danger">*</span></label>
                   <select class="form-control" v-model="form.status">
                     <option value="1">Active</option>
                     <option value="0">Inactive</option>
@@ -55,7 +55,7 @@
                   <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-save"></i> Submit
                   </button>
-            </div>
+                </div>
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@
                               <th>SKU</th>
                               <th>Category</th>
                               <th>Brand</th>
-                              <th>Action</th>
+                              <th class="text-center">Action</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -50,13 +50,13 @@
                                   <tr>
                                       <td> {{ ++$key }}</td>
                                       <td class="text-center">
-                                        <img width="64" src="{{ asset('storage/product_images/'. $product->image) }}">
+                                        <img width="64" height="64" src="{{ asset('storage/product_images/'. $product->image) }}">
                                       </td>
                                       <td>{{$product->name ?? ''}}</td>
                                       <td>{{$product->sku ?? ''}}</td>
                                       <td>{{$product->category->name ?? ''}}</td>
                                       <td>{{$product->brand->name ?? ''}}</td>
-                                      <th>
+                                      <td class="text-center">
                                       <a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-primary mr-2">
                                         <i class="fa fa-desktop"></i> Show
                                       </a>
@@ -69,7 +69,7 @@
                                       <form id="product-delete-{{ $product->id }}"action="{{ route('products.destroy', $product->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                      </th>
+                                      </td>
                                   </tr>
                                   @endforeach
                               @endif

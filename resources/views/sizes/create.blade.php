@@ -33,7 +33,7 @@
                     @csrf
                     <div class="card-body">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Size</label>
+                        <label for="exampleInputEmail1">Size <span class="text-danger">*</span></label>
                         <input type="text" name="size" class="form-control" placeholder="Enter size">
                         @if($errors->has('size'))
                             <span class="text-danger">{{ $errors->first('size')}}</span>

@@ -6,6 +6,8 @@ import categories from "./modules/categories";
 import brands from "./modules/brands";
 import sizes from "./modules/sizes";
 import products from "./modules/products";
+import stocks from "./modules/stocks";
+import return_products from "./modules/return_products";
 
 // Create a new store instance.
 export const store = createStore({
@@ -15,6 +17,8 @@ export const store = createStore({
         brands,
         sizes,
         products,
+        stocks,
+        return_products,
     },
     plugins: [createLogger()],
 });
