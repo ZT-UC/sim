@@ -1,4 +1,4 @@
-# Project for learning.
+# Project for learning
 Source: https://www.youtube.com/watch?v=ttHKOpAuU38&list=PLVIT7EMonV3dWOIjbQxQ2jxhywnjFb7Hy
 
 ## Preview
